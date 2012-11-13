@@ -1,0 +1,42 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+
+  config.vm.define :namenode do |namenode| 
+    namenode.vm.box = "precise64"
+    namenode.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+    namenode.vm.network :hostonly, "10.0.0.23"    
+    namenode.vm.host_name = "namenode"
+    namenode.vm.provision :puppet do |puppet|
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file  = "namenode.pp"
+    end
+  end
+  
+  config.vm.define :datanode01 do |datanode01| 
+    datanode01.vm.box = "precise64"
+    datanode01.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+    datanode01.vm.network :hostonly, "10.0.0.24"    
+    datanode01.vm.host_name = "datanode01"
+    datanode01.vm.provision :puppet do |puppet|
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file  = "datanode.pp"
+    end
+  end
+  
+  config.vm.define :datanode02 do |datanode02| 
+    datanode02.vm.box = "precise64"
+    datanode02.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+    datanode02.vm.network :hostonly, "10.0.0.25"    
+    datanode02.vm.host_name = "datanode02"
+    datanode02.vm.provision :puppet do |puppet|
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file  = "datanode.pp"
+    end
+  end
+
+end
