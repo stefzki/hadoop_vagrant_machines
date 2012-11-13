@@ -7,7 +7,7 @@ Vagrant::Config.run do |config|
     namenode.vm.box = "precise64"
     namenode.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
-    namenode.vm.network :hostonly, "10.0.0.23"    
+    namenode.vm.network :hostonly, "12.0.0.23"    
     namenode.vm.host_name = "namenode"
     namenode.vm.provision :puppet do |puppet|
       puppet.manifests_path = "manifests"
@@ -19,7 +19,7 @@ Vagrant::Config.run do |config|
     datanode01.vm.box = "precise64"
     datanode01.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
-    datanode01.vm.network :hostonly, "10.0.0.24"    
+    datanode01.vm.network :hostonly, "12.0.0.24"    
     datanode01.vm.host_name = "datanode01"
     datanode01.vm.provision :puppet do |puppet|
       puppet.manifests_path = "manifests"
@@ -31,7 +31,7 @@ Vagrant::Config.run do |config|
     datanode02.vm.box = "precise64"
     datanode02.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
-    datanode02.vm.network :hostonly, "10.0.0.25"    
+    datanode02.vm.network :hostonly, "12.0.0.25"    
     datanode02.vm.host_name = "datanode02"
     datanode02.vm.provision :puppet do |puppet|
       puppet.manifests_path = "manifests"
