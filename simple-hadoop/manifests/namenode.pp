@@ -17,7 +17,7 @@ file { '/opt/jre7':
 }
 
 exec { 'extract-jre': 
-	command => '/bin/tar -C /opt -xzf /vagrant/jre-7*.tar.gz && /bin/ln -s /opt/jre1* /opt/jre7"',
+	command => '/bin/tar -C /opt -xzf /vagrant/jre-7*.tar.gz && /bin/ln -s /opt/jre1* /opt/jre7',
 	path    => '/usr/local/bin/:/bin/:/usr/bin/',
 	creates => '/opt/jre7',
 	require => File['/opt/jre7']
