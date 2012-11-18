@@ -90,19 +90,19 @@ file { '/etc/hosts':
 file { '/etc/hadoop/conf/core-site.xml':
 	ensure  => present,
 	source  => '/vagrant/manifests/core-site.xml',
-	require => Package['hadoop-hdfs-namenode'],
+	require => Package['hadoop-hdfs-namenode', 'hadoop-0.20-mapreduce-jobtracker'],
 }
 
 file { '/etc/hadoop/conf/mapred-site.xml':
 	ensure  => present,
 	source  => '/vagrant/manifests/mapred-site.xml',
-	require => Package['hadoop-hdfs-namenode'],
+	require => Package['hadoop-hdfs-namenode', 'hadoop-0.20-mapreduce-jobtracker'],
 }
 
 file { '/etc/hadoop/conf/hdfs-site.xml':
 	ensure  => present,
 	source  => '/vagrant/manifests/hdfs-site.xml',
-	require => Package['hadoop-hdfs-namenode'],
+	require => Package['hadoop-hdfs-namenode', 'hadoop-0.20-mapreduce-jobtracker'],
 }
 
 file { '/data':
@@ -144,4 +144,9 @@ exec { 'format-namenode':
 service { 'hadoop-hdfs-namenode':
 	ensure  => running,
 	require => Exec['format-namenode'],
+}
+
+service { 'hadoop-0.20-mapreduce-jobtracker':
+	ensure  => running,
+	require => [ Service['hadoop-hdfs-namenode'], Package['hadoop-hdfs-namenode', 'hadoop-0.20-mapreduce-jobtracker'] ],
 }

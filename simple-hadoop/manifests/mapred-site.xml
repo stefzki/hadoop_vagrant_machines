@@ -18,5 +18,9 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 
 <configuration>
+	<property> 
+		<name>mapred.job.tracker</name> 
+		<value>namenode.local:9101</value> 
+	</property>
 </configuration>
 
