@@ -1,5 +1,9 @@
 # Hadoop Vagrant definitions
 
+##ATTENTION
+
+At the moment these scripts are work in progress - i will remove this info, when i am finished :)
+
 ## Purpose
 
 I personally liked Hadoop and all it's technologies. After it was great doing a live demo with a MongoDB Sharding Cluster, i thought it may also be funny to have something like this for Hadoop clusters.
