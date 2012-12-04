@@ -21,7 +21,7 @@
 
   <property>
      <name>fs.defaultFS</name>
-     <value>hdfs://namenode/hadoop</value>
+     <value>hdfs://namenode.local/hadoop</value>
   </property>
 
 </configuration>

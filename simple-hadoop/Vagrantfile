@@ -2,7 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-
+  config.vm.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+ 
   config.vm.define :namenode do |namenode| 
     namenode.vm.box = "precise64"
     namenode.vm.box_url = "http://files.vagrantup.com/precise64.box"

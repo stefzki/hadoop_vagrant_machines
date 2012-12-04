@@ -22,5 +22,9 @@
 		<name>mapred.job.tracker</name> 
 		<value>namenode.local:9101</value> 
 	</property>
+	<property> 
+		<name>mapreduce.jobtracker.address</name> 
+		<value>namenode.local:9101</value> 
+	</property>
 </configuration>
 

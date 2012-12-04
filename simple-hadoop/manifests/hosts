@@ -1,7 +1,7 @@
 127.0.0.1       localhost
-12.0.0.23       namenode namenode.local
-12.0.0.24       datanode01 datanode01.local
-12.0.0.25       datanode02 datanode02.local
+12.0.0.23       namenode.local namenode
+12.0.0.24       datanode01.local datanode01
+12.0.0.25       datanode02.local datanode02
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     ip6-localhost ip6-loopback
